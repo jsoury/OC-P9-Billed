@@ -4,7 +4,7 @@
   },
   "jest": {
     "verbose": false,
-    "setupFiles": [
+    "setupFilesAfterEnv": [
       "./setup-jest.js"
     ],
     "collectCoverageFrom": [
