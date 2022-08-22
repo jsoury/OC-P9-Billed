@@ -2,9 +2,15 @@
  * @jest-environment jsdom
  */
 
-import { screen, waitFor } from "@testing-library/dom";
+import {
+  getByTestId,
+  screen,
+  waitFor,
+  getAllByTestId,
+} from "@testing-library/dom";
 import BillsUI from "../views/BillsUI.js";
 import { bills } from "../fixtures/bills.js";
+import BillContainer from "../containers/Bills";
 import { ROUTES_PATH } from "../constants/routes.js";
 import { localStorageMock } from "../__mocks__/localStorage.js";
 
@@ -43,4 +49,9 @@ describe("Given I am connected as an employee", () => {
       expect(dates).toEqual(datesSorted);
     });
   });
+  it('Should open modal on i click on the icon eye', ()=>{
+    document.body.innerHTML = BillsUI({ data: bills });
+    console.log(getAllByTestId(document.body, "icon-eye")[0]);
+
+  })
 });
