@@ -22,7 +22,9 @@ export default class NewBill {
     var imageType = /^image\//;
     const file = this.document.querySelector(`input[data-testid="file"]`)
       .files[0];
-    const error = this.document.querySelector(".error");
+    const error = this.document.querySelector(
+      `span[data-testid="file-error-msg"]`
+    );
     /*
      * test pour determiner le type du document
      * affichage du message d'erreur si le type ne corespond pas a une image
@@ -50,13 +52,13 @@ export default class NewBill {
         },
       })
       .then(({ fileUrl, key }) => {
-        console.log(fileUrl);
         this.billId = key;
         this.fileUrl = fileUrl;
         this.fileName = fileName;
       })
       .catch((error) => console.error(error));
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(
