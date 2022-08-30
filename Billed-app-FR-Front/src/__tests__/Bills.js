@@ -118,9 +118,9 @@ describe("Given I am connected as an employee", () => {
 });
 
 // test d'intégration GET
-describe("Given I am a user connected as Employe whit ", () => {
+describe("Given I am a user connected as Employee", () => {
   describe("When I navigate to Bills", () => {
-    it("fetches bills from mock API GET", async () => {
+    it("then fetch bills mock API GET", async () => {
       const root = document.createElement("div");
       root.setAttribute("id", "root");
       document.body.append(root);
@@ -147,14 +147,14 @@ describe("Given I am a user connected as Employe whit ", () => {
             },
           };
         });
-        window.onNavigate(ROUTES_PATH.Dashboard);
+        window.onNavigate(ROUTES_PATH.Bills);
         await new Promise(process.nextTick);
         const message = await screen.getByTestId("error-message");
         expect(message).toHaveTextContent("404");
       });
     });
 
-    test("fetches messages from an API and fails with 500 message error", async () => {
+    it("fetches messages from an API and fails with 500 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {
           list: () => {
