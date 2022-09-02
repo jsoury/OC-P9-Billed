@@ -11,6 +11,7 @@ import { ROUTES_PATH, ROUTES } from "../constants/routes.js";
 import { localStorageMock } from "../__mocks__/localStorage.js";
 import mockStore from "../__mocks__/store";
 import router from "../app/Router.js";
+import store from "../__mocks__/store";
 
 const FormDataMock = {
   append: jest.fn(),
@@ -54,6 +55,7 @@ describe("Given I am connected as an employee", () => {
       const windowIcon = screen.getByTestId("icon-mail");
       expect(windowIcon).toHaveClass("active-icon");
     });
+
     it("then the form should be submitted by clicking on the submit button", () => {
       const mockedFormEvent = {
         target: { querySelector: jest.fn() },
@@ -80,7 +82,6 @@ describe("Given I am connected as an employee", () => {
       userEvent.click(buttonSubmit);
       expect(handleSubmit).toHaveBeenCalled();
     });
-    it("then the form should be submitted by clicking on the submit button", () => {});
   });
 });
 
@@ -116,6 +117,7 @@ describe("Given I am on NewBill Page", () => {
         "Seules les images au format JPG, JPEG ou PNG son accepté"
       );
     });
+
     it("then I don't see any error message if the file type is valid", () => {
       const html = NewBillUI();
       document.body.innerHTML = html;
@@ -165,5 +167,47 @@ describe("Given I am connected as an employee", () => {
       const UpdateBill = await mockStore.bills().update();
       expect(UpdateBill.id).toBe("47qAXb6fIm2zOKkLzMro");
     });
+
+    //cas d'erreur non prise en charge dans l' interface
+    // describe("When an error occurs on API", () => {
+    //   beforeEach(() => {
+    //     const root = document.createElement("div");
+    //     root.setAttribute("id", "root");
+    //     document.body.appendChild(root);
+    //     router();
+    //   });
+    //   it("send bills from mock API and fails with 404 message error", async () => {
+    //     mockStore.bills.mockImplementationOnce(() => {
+    //       return {
+    //         list: () => {
+    //           return Promise.reject(new Error("Erreur 404"));
+    //         },
+    //         update: () => {
+    //           return Promise.reject(new Error("Erreur 404"));
+    //         },
+    //       };
+    //     });
+    //     window.onNavigate(ROUTES_PATH.Bills);
+    //     await new Promise(process.nextTick);
+    //     const message = await screen.getByTestId("error-message");
+    //     expect(message).toHaveTextContent("404");
+    //   });
+    //   it("send bills from mock API and fails with 500 message error", async () => {
+    //     mockStore.bills.mockImplementationOnce(() => {
+    //       return {
+    //         list: () => {
+    //           return Promise.reject(new Error("Erreur 500"));
+    //         },
+    //         update: () => {
+    //           return Promise.reject(new Error("Erreur 500"));
+    //         },
+    //       };
+    //     });
+    //     window.onNavigate(ROUTES_PATH.Bills);
+    //     await new Promise(process.nextTick);
+    //     const message = await screen.getByTestId("error-message");
+    //     expect(message).toHaveTextContent("500");
+    //   });
+    // });
   });
 });
