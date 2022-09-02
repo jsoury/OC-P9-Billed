@@ -168,7 +168,7 @@ describe("Given I am connected as an employee", () => {
       expect(UpdateBill.id).toBe("47qAXb6fIm2zOKkLzMro");
     });
 
-    //cas d'erreur non prise en charge dans l' interface
+    //cas d'erreur non prise en charge dans l' interface pour la partie new bill
     // describe("When an error occurs on API", () => {
     //   beforeEach(() => {
     //     const root = document.createElement("div");
