@@ -11,7 +11,6 @@ import { ROUTES_PATH, ROUTES } from "../constants/routes.js";
 import { localStorageMock } from "../__mocks__/localStorage.js";
 import mockStore from "../__mocks__/store";
 import router from "../app/Router.js";
-import store from "../__mocks__/store";
 
 const FormDataMock = {
   append: jest.fn(),
@@ -55,7 +54,6 @@ describe("Given I am connected as an employee", () => {
       const windowIcon = screen.getByTestId("icon-mail");
       expect(windowIcon).toHaveClass("active-icon");
     });
-
     it("then the form should be submitted by clicking on the submit button", () => {
       const mockedFormEvent = {
         target: { querySelector: jest.fn() },
@@ -82,6 +80,7 @@ describe("Given I am connected as an employee", () => {
       userEvent.click(buttonSubmit);
       expect(handleSubmit).toHaveBeenCalled();
     });
+    it("then the form should be submitted by clicking on the submit button", () => {});
   });
 });
 
@@ -117,7 +116,6 @@ describe("Given I am on NewBill Page", () => {
         "Seules les images au format JPG, JPEG ou PNG son accepté"
       );
     });
-
     it("then I don't see any error message if the file type is valid", () => {
       const html = NewBillUI();
       document.body.innerHTML = html;
@@ -167,6 +165,7 @@ describe("Given I am connected as an employee", () => {
       const UpdateBill = await mockStore.bills().update();
       expect(UpdateBill.id).toBe("47qAXb6fIm2zOKkLzMro");
     });
+<<<<<<< HEAD
 
     //cas d'erreur non prise en charge dans l' interface pour la partie new bill
     // describe("When an error occurs on API", () => {
@@ -209,5 +208,7 @@ describe("Given I am connected as an employee", () => {
     //     expect(message).toHaveTextContent("500");
     //   });
     // });
+=======
+>>>>>>> parent of 55c207b (code cleanup)
   });
 });
