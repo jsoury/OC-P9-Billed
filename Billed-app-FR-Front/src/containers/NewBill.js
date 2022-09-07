@@ -19,18 +19,18 @@ export default class NewBill {
   }
   handleChangeFile = (e) => {
     e.preventDefault();
+    /*
+     * test to determine the type of the document
+     * display of the error message if the type does not correspond to an image
+     */
     var imageType = /^image\//;
     const file = this.document.querySelector(`input[data-testid="file"]`)
       .files[0];
     const error = this.document.querySelector(
       `span[data-testid="file-error-msg"]`
     );
-    /*
-     * test pour determiner le type du document
-     * affichage du message d'erreur si le type ne corespond pas a une image
-     */
     if (!imageType.test(file.type)) {
-      this.document.querySelector(`input[data-testid="file"]`).value = null;
+      e.target.value = null;
       error.innerHTML =
         "Seules les images au format JPG, JPEG ou PNG son accepté";
     } else error.innerHTML = "";

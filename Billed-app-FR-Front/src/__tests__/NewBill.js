@@ -165,7 +165,6 @@ describe("Given I am connected as an employee", () => {
       const UpdateBill = await mockStore.bills().update();
       expect(UpdateBill.id).toBe("47qAXb6fIm2zOKkLzMro");
     });
-<<<<<<< HEAD
 
     //cas d'erreur non prise en charge dans l' interface pour la partie new bill
     // describe("When an error occurs on API", () => {
@@ -208,7 +207,5 @@ describe("Given I am connected as an employee", () => {
     //     expect(message).toHaveTextContent("500");
     //   });
     // });
-=======
->>>>>>> parent of 55c207b (code cleanup)
   });
 });

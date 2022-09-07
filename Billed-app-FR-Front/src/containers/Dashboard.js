@@ -120,7 +120,7 @@ export default class {
   // }
 
   handleEditTicket(e, bill, bills) {
-    if (this.counter === undefined || this.id !== bill.id) this.counter = 0;
+    if (this.counter === undefined || this.id !== bill.id);
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id;
 
     bills.forEach((b) => {
@@ -129,7 +129,6 @@ export default class {
     $(`#open-bill${bill.id}`).css({ background: "#2A2B35" });
     $(".dashboard-right-container div").html(DashboardFormUI(bill));
     $(".vertical-navbar").css({ height: "150vh" });
-    this.counter++;
     $("#icon-eye-d").click(this.handleClickIconEye);
     $("#btn-accept-bill").click((e) => this.handleAcceptSubmit(e, bill));
     $("#btn-refuse-bill").click((e) => this.handleRefuseSubmit(e, bill));
