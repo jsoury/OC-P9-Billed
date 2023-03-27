@@ -2,16 +2,14 @@
 
 Coder une application accessible qui contient des données et plusieurs fonctionnalités assez conséquentes
 
-- voir le [projet](https://jsoury.github.io/OC-P6-Front-End-Fisheye).
-
 ## 1. Contexte
 
 Vous êtes développeur front-end chez Billed, une entreprise qui produit des solutions Saas destinées aux équipes de ressources humaines.
 
 ## 2. Objectifs
 
-- Fixer les bufs identifiés [kanban](https://openclassrooms.notion.site/a7a612fc166747e78d95aa38106a55ec?v=2a8d3553379c4366b6f66490ab8f0b90)
-- Ajouter des tests unitaires et d'intégration. assurer un taux de couverture de 80% minimum. [Rapport de couverture](https://github.com/jsoury/OC-P9-Billed/blob/main/coverageAllFille.PNG)
+- Fixer les bug identifiés. [kanban](https://openclassrooms.notion.site/a7a612fc166747e78d95aa38106a55ec?v=2a8d3553379c4366b6f66490ab8f0b90)
+- Ajouter des tests unitaires et d'intégration. Assurer un taux de couverture de 80% minimum. [Rapport de couverture](https://github.com/jsoury/OC-P9-Billed/blob/main/CoverageAllFille.PNG)
 - Rediger un plan de test End-to-End [E2E](https://github.com/jsoury/OC-P9-Billed/blob/main/Billed%2B-%2BE2E%2Bparcours%2Bemploye.pdf)
 
 ## 3. Spécifications
@@ -21,8 +19,8 @@ Vous êtes développeur front-end chez Billed, une entreprise qui produit des so
 
 ## 4. Démarrage
 
-[Front-End](https://github.com/jsoury/OC-P9-Billed/tree/main/Billed-app-FR-Front)
-[Back-End](https://github.com/jsoury/OC-P9-Billed/tree/main/Billed-app-FR-Front)
+- [Front-End](https://github.com/jsoury/OC-P9-Billed/tree/main/Billed-app-FR-Front)
+- [Back-End](https://github.com/jsoury/OC-P9-Billed/tree/main/Billed-app-FR-Front)
 
 ### 4.1. IDE
 
